@@ -1,4 +1,4 @@
-package com.todolist.spring.todolist.domain.model;
+package com.todolist.spring.todolistt.domain.model;
 
 import jakarta.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.todolist.spring.todolist.domain.usecase.task_usecases;
+package com.todolist.spring.todolistt.domain.usecase.task_usecases;
 
 public class GetAllTasks {
 }

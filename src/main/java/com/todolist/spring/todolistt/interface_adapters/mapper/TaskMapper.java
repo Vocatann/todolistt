@@ -1,8 +1,10 @@
-package com.todolist.spring.todolist.interface_adapters.mapper;
+package com.todolist.spring.todolistt.interface_adapters.mapper;
 
-import com.todolist.spring.todolist.domain.model.Task;
-import com.todolist.spring.todolist.interface_adapters.dto.TaskDTO;
+import com.todolist.spring.todolistt.domain.model.Task;
+import com.todolist.spring.todolistt.interface_adapters.dto.TaskDTO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TaskMapper {
     public Task toEntity(TaskDTO dto) {
         Task task = new Task();

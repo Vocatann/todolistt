@@ -1,4 +1,4 @@
-package com.todolist.spring.todolist.interface_adapters.dto;
+package com.todolist.spring.todolistt.interface_adapters.dto;
 
 public class TaskDTO {
 

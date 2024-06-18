@@ -1,6 +1,6 @@
-package com.todolist.spring.todolist.domain.usecase.task_usecases;
+package com.todolist.spring.todolistt.domain.usecase.task_usecases;
 
-import com.todolist.spring.todolist.domain.repository.TaskRepository;
+import com.todolist.spring.todolistt.domain.repository.TaskRepository;
 
 public class DeleteTask {
     private final TaskRepository taskRepository;
@@ -10,6 +10,6 @@ public class DeleteTask {
     }
 
     public void deleteTask(Long id) {
-        taskRepository.delete(id);
+        taskRepository.deleteById(id);
     }
 }
