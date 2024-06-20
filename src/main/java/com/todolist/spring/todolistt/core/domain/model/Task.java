@@ -1,19 +1,28 @@
-package com.todolist.spring.todolistt.interface_adapters.dto;
+package com.todolist.spring.todolistt.core.domain.model;
 
-public class TaskDTO {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "tasks")
+public class Task {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "title", nullable = false)
     private String title;
 
+    @Column(name = "description")
     private String description;
 
+    @Column(name = "is_completed", nullable = false)
     private boolean isCompleted;
 
-    public TaskDTO() {
+    public Task() {
     }
 
-    public TaskDTO(Long id, String title, String description, boolean isCompleted) {
+    public Task(Long id, String title, String description, boolean isCompleted) {
         this.id = id;
         this.title = title;
         this.description = description;

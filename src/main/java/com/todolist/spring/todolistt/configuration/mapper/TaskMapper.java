@@ -1,7 +1,7 @@
-package com.todolist.spring.todolistt.interface_adapters.mapper;
+package com.todolist.spring.todolistt.configuration.mapper;
 
-import com.todolist.spring.todolistt.domain.model.Task;
-import com.todolist.spring.todolistt.interface_adapters.dto.TaskDTO;
+import com.todolist.spring.todolistt.core.domain.model.Task;
+import com.todolist.spring.todolistt.configuration.dto.TaskDTO;
 import org.springframework.stereotype.Component;
 
 @Component

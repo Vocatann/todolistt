@@ -1,7 +1,7 @@
-package com.todolist.spring.todolistt.domain.usecase.task_usecases;
+package com.todolist.spring.todolistt.core.usecase.task_usecases;
 
-import com.todolist.spring.todolistt.domain.model.Task;
-import com.todolist.spring.todolistt.domain.repository.TaskRepository;
+import com.todolist.spring.todolistt.core.domain.model.Task;
+import com.todolist.spring.todolistt.core.domain.repository.TaskRepository;
 
 public class GetTaskById {
     private final TaskRepository taskRepository;

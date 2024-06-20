@@ -1,6 +1,6 @@
-package com.todolist.spring.todolistt.domain.usecase.task_usecases;
+package com.todolist.spring.todolistt.core.usecase.task_usecases;
 
-import com.todolist.spring.todolistt.domain.repository.TaskRepository;
+import com.todolist.spring.todolistt.core.domain.repository.TaskRepository;
 
 public class DeleteTask {
     private final TaskRepository taskRepository;

@@ -1,8 +1,8 @@
-package com.todolist.spring.todolistt.domain.repository;
+package com.todolist.spring.todolistt.core.domain.repository;
 
 
 
-import com.todolist.spring.todolistt.domain.model.Task;
+import com.todolist.spring.todolistt.core.domain.model.Task;
 
 import java.util.List;
 
