@@ -1,23 +1,13 @@
 package com.todolist.spring.todolistt.core.domain.model;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "tasks")
 public class Task {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "is_completed", nullable = false)
     private boolean isCompleted;
 
     public Task() {

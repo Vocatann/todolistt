@@ -21,9 +21,9 @@ public class TaskController {
     }
 
     @PostMapping
-    public ResponseEntity<Task> addTask(@RequestBody TaskDTO taskDTO) {
+    public void addTask(@RequestBody TaskDTO taskDTO) {
         Task task = taskMapper.toEntity(taskDTO);
-        task = saveTask.save(task);
-        return new ResponseEntity<>(task, HttpStatus.CREATED);
+        saveTask.save(task);
+        new ResponseEntity<>(task, HttpStatus.CREATED);
     }
 }

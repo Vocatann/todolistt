@@ -11,7 +11,7 @@ public class SaveTask {
         this.taskRepository = taskRepository;
     }
 
-    public Task save(Task task) {
-        return taskRepository.save(task);
+    public void save(Task task) {
+        taskRepository.save(task);
     }
 }
