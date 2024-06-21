@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/task")
-public class TaskRESTController {
+public class TaskController {
 
     private final SaveTask saveTask;
     private final TaskMapper taskMapper;
 
-    public TaskRESTController(SaveTask saveTask, TaskMapper taskMapper) {
+    public TaskController(SaveTask saveTask, TaskMapper taskMapper) {
         this.saveTask = saveTask;
         this.taskMapper = taskMapper;
     }

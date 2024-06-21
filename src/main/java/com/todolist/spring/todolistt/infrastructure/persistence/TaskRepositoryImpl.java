@@ -3,6 +3,7 @@ package com.todolist.spring.todolistt.infrastructure.persistence;
 import com.todolist.spring.todolistt.core.domain.model.Task;
 import com.todolist.spring.todolistt.core.domain.repository.TaskRepository;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
@@ -10,11 +11,13 @@ import java.util.List;
 @Transactional
 public class TaskRepositoryImpl implements TaskRepository {
 
+    @PersistenceContext
     private final EntityManager entityManager;
 
     public TaskRepositoryImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
+
 
     @Override
     public Task save(Task task) {
