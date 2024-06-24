@@ -12,7 +12,7 @@ public class DeleteTaskUseCase {
     }
 
     public void deleteTask(Long id) {
-        Task task = taskRepository.getById(id).orElseThrow(
+        Task task = taskRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Task not found with id: " + id)
         );
 

@@ -34,7 +34,7 @@ public class PostgreSQLTaskRepository implements TaskRepository {
     }
 
     @Override
-    public Optional<Task> getById(Long id) {
+    public Optional<Task> findById(Long id) {
         String sql = "SELECT * FROM tasks WHERE id = ?";
         Task task = null;
 

@@ -5,15 +5,15 @@ import com.todolist.spring.todolistt.core.domain.mapper.TaskMapper;
 import com.todolist.spring.todolistt.core.domain.repository.TaskRepository;
 import com.todolist.spring.todolistt.core.exception.ResourceNotFoundException;
 
-public class GetTaskByIdUseCase {
+public class FindTaskByIdUseCase {
     private final TaskRepository taskRepository;
 
-    public GetTaskByIdUseCase(TaskRepository taskRepository) {
+    public FindTaskByIdUseCase(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
 
     public TaskDTO getTaskById(Long id) {
-        return taskRepository.getById(id)
+        return taskRepository.findById(id)
                 .map(TaskMapper::toDto)
                 .orElseThrow(() -> new ResourceNotFoundException("Task not found with id: " + id));
     }

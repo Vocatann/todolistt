@@ -24,7 +24,12 @@ public class UseCaseConfig {
     }
 
     @Bean
-    public GetTaskByIdUseCase getTaskByIdUseCase(TaskRepository taskRepository){
-        return new GetTaskByIdUseCase(taskRepository);
+    public FindTaskByIdUseCase findTaskByIdUseCase(TaskRepository taskRepository){
+        return new FindTaskByIdUseCase(taskRepository);
+    }
+
+    @Bean
+    public FindAllTasksUseCase findAllTasksUseCase(TaskRepository taskRepository){
+        return new FindAllTasksUseCase(taskRepository);
     }
 }
