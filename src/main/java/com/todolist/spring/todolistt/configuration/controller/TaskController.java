@@ -40,4 +40,9 @@ public class TaskController {
         return new ResponseEntity<>(taskDTO, HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTask(@PathVariable long id) {
+        deleteTask.deleteTask(id);
+        return ResponseEntity.ok().build();
+    }
 }
