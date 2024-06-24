@@ -1,4 +1,4 @@
-package com.todolist.spring.todolistt.configuration.dto;
+package com.todolist.spring.todolistt.core.domain.dto;
 
 public class TaskDTO {
 

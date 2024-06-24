@@ -1,16 +1,15 @@
 package com.todolist.spring.todolistt.core.usecase.task_usecases;
 
-import com.todolist.spring.todolistt.core.domain.model.Task;
 import com.todolist.spring.todolistt.core.domain.repository.TaskRepository;
 
-public class GetTaskById {
+public class DeleteTaskUseCase {
     private final TaskRepository taskRepository;
 
-    public GetTaskById(TaskRepository taskRepository) {
+    public DeleteTaskUseCase(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
 
-    public Task findTaskById(Long id) {
-        return taskRepository.getById(id);
+    public void deleteTask(Long id) {
+        taskRepository.deleteById(id);
     }
 }

@@ -1,12 +1,10 @@
-package com.todolist.spring.todolistt.configuration.mapper;
+package com.todolist.spring.todolistt.core.domain.mapper;
 
 import com.todolist.spring.todolistt.core.domain.model.Task;
-import com.todolist.spring.todolistt.configuration.dto.TaskDTO;
-import org.springframework.stereotype.Component;
+import com.todolist.spring.todolistt.core.domain.dto.TaskDTO;
 
-@Component
 public class TaskMapper {
-    public Task toEntity(TaskDTO dto) {
+    public static Task toEntity(TaskDTO dto) {
         Task task = new Task();
         task.setId(dto.getId());
         task.setTitle(dto.getTitle());
@@ -15,7 +13,7 @@ public class TaskMapper {
         return task;
     }
 
-    public TaskDTO toDto(Task task) {
+    public static TaskDTO toDto(Task task) {
         TaskDTO dto = new TaskDTO();
         dto.setId(task.getId());
         dto.setTitle(task.getTitle());

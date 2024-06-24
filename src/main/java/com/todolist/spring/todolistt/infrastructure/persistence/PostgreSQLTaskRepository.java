@@ -6,6 +6,7 @@ import com.todolist.spring.todolistt.core.domain.repository.TaskRepository;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class PostgreSQLTaskRepository implements TaskRepository {
 
@@ -33,7 +34,7 @@ public class PostgreSQLTaskRepository implements TaskRepository {
     }
 
     @Override
-    public Task getById(Long id) {
+    public Optional<Task> getById(Long id) {
         String sql = "SELECT * FROM tasks WHERE id = ?";
         Task task = null;
 
@@ -54,7 +55,7 @@ public class PostgreSQLTaskRepository implements TaskRepository {
             e.printStackTrace();
         }
 
-        return task;
+        return Optional.ofNullable(task);
     }
 
     @Override
@@ -82,7 +83,7 @@ public class PostgreSQLTaskRepository implements TaskRepository {
     }
 
     @Override
-    public Task update(Task task) {
+    public void update(Task task) {
         String sql = "UPDATE tasks SET title = ?, description = ?, is_completed = ? WHERE id = ?";
 
         try (Connection conn = getConnection();
@@ -90,13 +91,11 @@ public class PostgreSQLTaskRepository implements TaskRepository {
             pstmt.setString(1, task.getTitle());
             pstmt.setString(2, task.getDescription());
             pstmt.setBoolean(3, task.isCompleted());
-            pstmt.setLong(3, task.getId());
+            pstmt.setLong(4, task.getId());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return task;
     }
 
     @Override
