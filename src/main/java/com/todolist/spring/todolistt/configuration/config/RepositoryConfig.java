@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class RepositoryConfig {
 
     @Bean
-    public TaskRepository userRepository() {
+    public TaskRepository taskRepository() {
         return new PostgreSQLTaskRepository();
     }
 }

@@ -1,7 +1,8 @@
 package com.todolist.spring.todolistt.configuration.config;
 
 import com.todolist.spring.todolistt.core.domain.repository.TaskRepository;
-import com.todolist.spring.todolistt.core.usecase.task_usecases.*;
+import com.todolist.spring.todolistt.core.usecase.TaskService;
+import com.todolist.spring.todolistt.core.usecase.impl.TaskServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,27 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class UseCaseConfig {
 
     @Bean
-    public SaveTaskUseCase saveTaskUseCase(TaskRepository taskRepository){
-        return new SaveTaskUseCase(taskRepository);
-    }
-
-    @Bean
-    public UpdateTaskUseCase updateTaskUseCase(TaskRepository taskRepository){
-        return new UpdateTaskUseCase(taskRepository);
-    }
-
-    @Bean
-    public DeleteTaskUseCase deleteTaskUseCase(TaskRepository taskRepository){
-        return new DeleteTaskUseCase(taskRepository);
-    }
-
-    @Bean
-    public FindTaskByIdUseCase findTaskByIdUseCase(TaskRepository taskRepository){
-        return new FindTaskByIdUseCase(taskRepository);
-    }
-
-    @Bean
-    public FindAllTasksUseCase findAllTasksUseCase(TaskRepository taskRepository){
-        return new FindAllTasksUseCase(taskRepository);
+    public TaskService taskService(TaskRepository taskRepository) {
+        return new TaskServiceImpl(taskRepository);
     }
 }

@@ -20,13 +20,14 @@ public class PostgreSQLTaskRepository implements TaskRepository {
 
     @Override
     public void save(Task task) {
-        String sql = "INSERT INTO tasks (title, description, is_completed) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO tasks (title, description, is_completed, user_id) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, task.getTitle());
             pstmt.setString(2, task.getDescription());
             pstmt.setBoolean(3, task.isCompleted());
+            pstmt.setLong(4, task.getUserId());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -49,6 +50,7 @@ public class PostgreSQLTaskRepository implements TaskRepository {
                 task.setTitle(rs.getString("title"));
                 task.setDescription(rs.getString("description"));
                 task.setCompleted(rs.getBoolean("is_completed"));
+                task.setUserId(rs.getLong("user_id"));
 
             }
         } catch (SQLException e) {
@@ -73,6 +75,7 @@ public class PostgreSQLTaskRepository implements TaskRepository {
                 task.setTitle(rs.getString("title"));
                 task.setDescription(rs.getString("description"));
                 task.setCompleted(rs.getBoolean("is_completed"));
+                task.setUserId(rs.getLong("user_id"));
                 tasks.add(task);
             }
         } catch (SQLException e) {
@@ -91,7 +94,8 @@ public class PostgreSQLTaskRepository implements TaskRepository {
             pstmt.setString(1, task.getTitle());
             pstmt.setString(2, task.getDescription());
             pstmt.setBoolean(3, task.isCompleted());
-            pstmt.setLong(4, task.getId());
+            pstmt.setLong(4, task.getUserId());
+            pstmt.setLong(5, task.getId());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
