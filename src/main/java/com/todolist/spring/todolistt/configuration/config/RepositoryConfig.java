@@ -1,7 +1,8 @@
 package com.todolist.spring.todolistt.configuration.config;
 
-import com.todolist.spring.todolistt.core.domain.repository.TaskRepository;
-import com.todolist.spring.todolistt.infrastructure.persistence.PostgreSQLTaskRepository;
+import com.todolist.spring.todolistt.core.domain.model.Task;
+import com.todolist.spring.todolistt.core.domain.repository.GenericRepository;
+import com.todolist.spring.todolistt.infrastructure.persistence.GenericRepositoryImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class RepositoryConfig {
 
     @Bean
-    public TaskRepository taskRepository() {
-        return new PostgreSQLTaskRepository();
+    public GenericRepository<Task, Long> defaultRepository() {
+        return new GenericRepositoryImpl<>(Task.class);
     }
 }

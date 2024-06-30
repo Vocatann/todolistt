@@ -27,7 +27,7 @@ public class TaskController {
 
     @PutMapping
     public ResponseEntity<Void> updateTask(@RequestBody TaskDTO taskDTO) {
-        taskService.updateTask(taskDTO);
+        taskService.saveTask(taskDTO);
         return ResponseEntity.ok().build();
     }
 
