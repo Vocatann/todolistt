@@ -1,7 +1,7 @@
 package com.todolist.spring.todolistt.core.usecase;
 
-import com.todolist.spring.todolistt.core.domain.model.User;
+import com.todolist.spring.todolistt.core.domain.dto.UserDTO;
 
 public interface UserService {
-    void save(User user);
+    void saveUser(UserDTO userDTO   );
 }

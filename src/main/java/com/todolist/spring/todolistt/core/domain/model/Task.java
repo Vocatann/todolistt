@@ -5,7 +5,7 @@ public class Task {
     private Long id;
     private String title;
     private String description;
-    private boolean iscompleted;
+    private boolean isCompleted;
     private Long userId;
 
     public Task() {
@@ -15,7 +15,7 @@ public class Task {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.iscompleted = isCompleted;
+        this.isCompleted = isCompleted;
         this.userId = userId;
     }
 
@@ -43,12 +43,12 @@ public class Task {
         this.description = description;
     }
 
-    public boolean getIscompleted() {
-        return iscompleted;
+    public boolean getCompleted() {
+        return isCompleted;
     }
 
-    public void setIscompleted(boolean iscompleted) {
-        this.iscompleted = iscompleted;
+    public void setCompleted(boolean completed) {
+        this.isCompleted = completed;
     }
 
     public Long getUserId() {

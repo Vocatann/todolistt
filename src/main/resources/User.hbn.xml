@@ -3,27 +3,22 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.todolist.spring.todolistt.core.domain.model">
-    <class name="Task" table="tasks">
+    <class name="User" table="users">
         <id name="id" type="java.lang.Long">
             <column name="id" />
             <generator class="identity" />
         </id>
 
-        <property name="title" type="string">
-            <column name="title" />
+        <property name="username" type="string">
+            <column name="username" />
         </property>
 
-        <property name="description" type="string">
-            <column name="description" />
+        <property name="email" type="string">
+            <column name="email" />
         </property>
 
-        <property name="completed" type="boolean">
-            <column name="is_completed" />
+        <property name="password" type="string">
+            <column name="password" />
         </property>
-
-        <many-to-one name="userId" class="com.todolist.spring.todolistt.core.domain.model.User" fetch="join">
-            <column name="user_id" not-null="true" />
-        </many-to-one>
-
     </class>
 </hibernate-mapping>
