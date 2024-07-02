@@ -17,13 +17,13 @@
             <column name="description" />
         </property>
 
-        <property name="completed" type="boolean">
+        <property name="iscompleted" type="boolean">
             <column name="is_completed" />
         </property>
 
-        <many-to-one name="userId" class="com.todolist.spring.todolistt.core.domain.model.User" fetch="join">
-            <column name="user_id" not-null="true" />
-        </many-to-one>
+        <property name="userId" type="java.lang.Long">
+            <column name="user_id"/>
+        </property>
 
     </class>
 </hibernate-mapping>

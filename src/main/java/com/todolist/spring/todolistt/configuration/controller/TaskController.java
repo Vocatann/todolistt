@@ -9,14 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/task")
+@RequestMapping("/api/tasks")
 public class TaskController {
 
     private final TaskService taskService;
 
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
-
     }
 
     @PostMapping
