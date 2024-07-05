@@ -41,7 +41,7 @@ public class TaskMapperTest {
         assertEquals(1, dto.getId());
         assertEquals("Sample Task", dto.getTitle());
         assertEquals("This is a sample task", dto.getDescription());
-        assertTrue(dto.isCompleted());
+        assertTrue(dto.getIsCompleted());
         assertEquals(100, dto.getUserId());
     }
 }

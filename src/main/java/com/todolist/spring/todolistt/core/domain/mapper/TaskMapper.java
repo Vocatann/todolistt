@@ -9,7 +9,7 @@ public class TaskMapper {
         task.setId(dto.getId());
         task.setTitle(dto.getTitle());
         task.setDescription(dto.getDescription());
-        task.setIscompleted(dto.isCompleted());
+        task.setIscompleted(dto.getIsCompleted());
         task.setUserId(dto.getUserId());
         return task;
     }
